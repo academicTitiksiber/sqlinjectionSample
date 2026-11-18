@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101b2a"><title>siberFinance | Secure Workspace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#172437;--muted:#788697;--line:#e7ebef;--canvas:#f4f6f8;--teal:#4eaaa0}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;color:var(--ink);background:var(--canvas);font-family:"DM Sans",sans-serif}
+.shell{min-height:100vh;display:grid;grid-template-columns:minmax(390px,.92fr) 1.08fr}
+.visual{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:42px 52px 38px;color:#f4f7fa;background:radial-gradient(ellipse at 75% 20%,rgba(75,168,157,.25),transparent 34%),radial-gradient(ellipse at 10% 85%,rgba(75,120,160,.18),transparent 38%),linear-gradient(145deg,#192b40,#101c2c 72%,#152b3b)}
+.visual:before,.visual:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.08);border-radius:50%;pointer-events:none}
+.visual:before{width:540px;height:540px;right:-235px;top:14%}.visual:after{width:390px;height:390px;right:-160px;top:24%}
+.brand{display:flex;align-items:center;gap:12px;z-index:1}.brand-mark{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;color:#102233;background:#82c7bb;font:800 17px Manrope,sans-serif}
+.brand-name{font:700 17px Manrope,sans-serif;letter-spacing:-.4px}.brand-name span{color:#86c9bd}
+.visual-copy{z-index:1;max-width:470px;margin:60px 0 45px}.eyebrow{color:#8fcfc3;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.visual h1{margin:19px 0 17px;font:700 clamp(35px,4vw,53px)/1.13 Manrope,sans-serif;letter-spacing:-2px}
+.visual-copy p{max-width:390px;color:#b2bfcc;font-size:15px;line-height:1.8}
+.signal{z-index:1;display:flex;align-items:center;gap:12px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);color:#aab8c6;font-size:12px}
+.signal-dot{width:7px;height:7px;border-radius:50%;background:#78c7a9;box-shadow:0 0 0 4px rgba(120,199,169,.12)}
+.main{display:grid;place-items:center;padding:54px 34px}.panel{width:min(100%,420px)}.mobile-brand{display:none}
+.panel h2{margin:0 0 9px;font:800 29px Manrope,sans-serif;letter-spacing:-1px}.intro{margin:0 0 34px;color:var(--muted);font-size:14px;line-height:1.65}
+.field{margin:0 0 19px}label{display:block;margin-bottom:8px;color:#344357;font-size:12px;font-weight:700}.input-wrap{position:relative}
+input[type=text],input[type=password]{width:100%;height:51px;padding:0 15px;border:1px solid #dfe5ea;border-radius:7px;outline:none;background:#fff;color:var(--ink);font:14px "DM Sans",sans-serif}
+input::placeholder{color:#a6b0bb}input[type=text]:focus,input[type=password]:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(78,170,160,.13)}
+.password-input{padding-right:70px!important}.toggle{position:absolute;top:50%;right:13px;transform:translateY(-50%);border:0;padding:5px;color:#728092;background:transparent;cursor:pointer;font:600 11px "DM Sans",sans-serif}
+.options{display:flex;justify-content:space-between;align-items:center;margin:2px 0 25px}.remember{display:flex;align-items:center;gap:8px;color:#69788a;font-size:12px}.remember input{width:14px;height:14px;accent-color:#338d84}
+.quiet{color:#6d8f91;font-size:12px}.submit{width:100%;height:51px;border:0;border-radius:7px;color:#fff;background:#1b3549;cursor:pointer;font:700 13px "DM Sans",sans-serif;letter-spacing:.2px}
+.submit:hover{background:#28536a}.footnote{margin:25px 0 0;color:#9aa5b1;text-align:center;font-size:11px}
+.alert{margin:0 0 19px;padding:12px 14px;border-radius:6px;color:#a34343;background:#fff0ef;font-size:12px}
+.account-card{margin:25px 0;padding:19px;border:1px solid var(--line);border-radius:9px;background:#fff}.account-label{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1px}
+.account-name{margin:7px 0 0;font:700 20px Manrope,sans-serif}
+@media(max-width:850px){.shell{grid-template-columns:1fr}.visual{display:none}.main{min-height:100vh;padding:38px 24px}.mobile-brand{display:flex;margin-bottom:55px}}
+@media(max-width:420px){.main{padding:28px 21px}.mobile-brand{margin-bottom:43px}}
+</style></head>
+<body><div class="shell">
+<aside class="visual"><div class="brand"><div class="brand-name">siberFinance<span>.</span></div></div>
+<div class="visual-copy"><div class="eyebrow">A clearer way to work</div><h1>Your work.<br>In good hands.</h1><p>A considered workspace for teams who value focus, clarity, and thoughtful collaboration.</p></div>
+<div class="signal"><span class="signal-dot"></span> Workspace services operational</div></aside>
+<main class="main"><section class="panel">
+<div class="brand mobile-brand"><div class="brand-name">siberFinance<span>.</span></div></div>
+{% if authenticated|default(false) %}
+<div class="eyebrow" style="margin-bottom:14px">Workspace</div><h2>You're signed in.</h2><p class="intro">Welcome back. Your workspace is ready.</p>
+<div class="account-card"><div class="account-label">Signed in as</div><div class="account-name">{{ display_name }}</div><div style="margin-top:5px;color:#8b98a6;font-size:12px">@{{ username }}</div></div>
+<form method="post" action="{{ url_for('logout') }}"><button class="submit" type="submit">Sign out</button></form>
+{% else %}
+<div class="eyebrow" style="margin-bottom:14px">Welcome back</div><h2>Hallo!</h2><p class="intro">Enter your details below to access your workspace.</p>
+{% with messages = get_flashed_messages(with_categories=true) %}{% for category,message in messages %}<div class="alert" role="alert">{{ message }}</div>{% endfor %}{% endwith %}
+<form method="post" action="{{ url_for('login') }}" autocomplete="off">
+<div class="field"><label for="username">Username</label><input id="username" name="username" type="text" placeholder="Your username" required></div>
+<div class="field"><label for="password">Password</label><div class="input-wrap"><input class="password-input" id="password" name="password" type="password" placeholder="Enter your password" required><button class="toggle" type="button" id="togglePassword">Show</button></div></div>
+<div class="options"><label class="remember"><input type="checkbox" name="remember"> Keep me signed in</label><span class="quiet">Workspace access</span></div>
+<button class="submit" type="submit">Continue to workspace <span aria-hidden="true">→</span></button></form>
+<p class="footnote">© 2026 siberFinance Workspace. All rights reserved.</p>
+{% endif %}</section></main></div>
+<script>
+const toggle=document.getElementById("togglePassword");
+if(toggle){toggle.addEventListener("click",()=>{const field=document.getElementById("password");const showing=field.type==="text";field.type=showing?"password":"text";toggle.textContent=showing?"Show":"Hide";});}
+</script></body></html>
